@@ -112,3 +112,31 @@ Search	O(n)	O(n)
 Insert	O(1)	O(1)
 Deletion	O(1)	O(1)
 Space Complexity: O(n)
+
+
+// Function to insert a new node at the end of the list void 
+insertAtEnd(Node* &head, int value) { 
+  // Create a new node and allocate memory 
+  Node* newNode = new Node(); 
+  // Assign the value and set the next pointer to NULL 
+  newNode->value = value; 
+  newNode->next = NULL; 
+  // If the list is empty, make the new node as the head 
+  if (head == NULL) 
+    { 
+      head = newNode; 
+      return; 
+    } 
+  // Traverse the list to find the last node 
+  Node* temp = head; 
+  while (temp->next != NULL) 
+    { 
+      temp = temp->next; 
+    } 
+  // Link the last node to the new node 
+  temp->next = newNode; 
+}
+
+You can use these functions to insert nodes at different positions in your linked list. For example, if you want to insert a node with value 4 at the end of your list, you can call:
+
+insertAtEnd(head, 4);
